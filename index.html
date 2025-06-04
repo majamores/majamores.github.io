@@ -3,28 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Miguel Amores | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <header class="header">
+    <div class="logo">Miguel A.</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="toggle-btn" aria-label="Toggle Night Mode">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero">
     <img src="1672744859744.jpg" alt="Miguel Amores" class="profile-img" />
-    <h1>Hello, I'm Miguel Amores</h1>
-    <p>Welcome to my portfolio. I'm an IT student at the University of the Visayas - Main Campus.</p>
-    <ul class="socials">
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">Contact Me</a></li>
+    <div class="intro">
+      <h1>Hello, I'm Miguel Amores</h1>
+      <p>An IT student at the University of the Visayas - Main Campus.</p>
+      <ul class="socials">
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <p>I’m passionate about technology, software development, and creative problem-solving. I’m learning web development and building projects that reflect my growth.</p>
+  </section>
+
+  <section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>Project Title 1</h3>
+        <p>Short description of what it does or why it's cool.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Title 2</h3>
+        <p>Another one of your cool ideas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Python</li>
+      <li>Git & GitHub</li>
     </ul>
-  </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Miguel Amores. All rights reserved.</p>
+  </footer>
 
   <script>
-    const toggleBtn = document.createElement('button');
-    toggleBtn.id = 'toggle-btn';
-    toggleBtn.innerText = 'Toggle Night Mode';
-    document.body.appendChild(toggleBtn);
-
-    toggleBtn.addEventListener('click', () => {
+    document.getElementById('toggle-btn').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
   </script>
