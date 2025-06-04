@@ -2,127 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Miguel Amores | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f2f4f8;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #111;
-      animation: fadeIn 1.2s ease-in;
-    }
-
-    p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-
-    ul.socials {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    ul.socials li a {
-      text-decoration: none;
-      color: #555;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-
-    ul.socials li a:hover {
-      color: #0077b5;
-    }
-
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-top: 20px;
-      border: 4px solid #ddd;
-    }
-
-    section {
-      margin-top: 40px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        margin: 20px;
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
+    <img src="1672744859744.jpg" alt="Miguel Amores" class="profile-img" />
     <h1>Hello, I'm Miguel Amores</h1>
-    <p>I'm an IT student at the University of the Visayas - Main Campus. Welcome to my personal portfolio!</p>
-    
+    <p>Welcome to my portfolio. I'm an IT student at the University of the Visayas - Main Campus.</p>
     <ul class="socials">
-      <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-      <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
-      <li><a href="mailto:your@email.com"><i class="fas fa-envelope"></i> Contact Me</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Contact Me</a></li>
     </ul>
-
-    <img src="1672744859744.jpg" alt="Miguel Amores" class="profile-img"/>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I love building simple, clean websites and learning new technologies. I'm currently focused on web development and systems integration.</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>Coming soon: List of projects I've worked on, including academic and personal ones.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Reach out to me via email or through my social links above. I'm open to collaboration and internship opportunities.</p>
-    </section>
   </div>
+
+  <script>
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'toggle-btn';
+    toggleBtn.innerText = 'Toggle Night Mode';
+    document.body.appendChild(toggleBtn);
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
