@@ -1,52 +1,114 @@
 :root {
-  --bg-color: #f2f4f8;
-  --text-color: #111;
-  --card-bg: #fff;
-  --accent-color: #0077b5;
+  --bg-color: #0f111a;
+  --text-color: #e0e3f0;
+  --card-bg: #1a1c29;
+  --accent-color: #a4ffaf;
+  --hover-color: #67d68b;
+  --border-color: #2c2f3f;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body.dark-mode {
-  --bg-color: #121212;
-  --text-color: #f1f1f1;
-  --card-bg: #1e1e1e;
-  --accent-color: #4dabf7;
+  --bg-color: #e6e9f0;
+  --text-color: #0e1117;
+  --card-bg: #ffffff;
+  --accent-color: #28a745;
+  --hover-color: #1c7a33;
+  --border-color: #ccc;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  font-family: var(--font-body);
   background-color: var(--bg-color);
   color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 1.2rem 2rem;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.container {
-  max-width: 900px;
-  margin-top: 80px;
-  background: var(--card-bg);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 40px;
+  animation: fadeIn 1.2s ease;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--accent-color);
+  box-shadow: 0 0 20px var(--accent-color);
+}
+
+.intro {
+  max-width: 500px;
   text-align: center;
-  animation: fadeIn 1.2s ease-out;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  animation: slideUp 0.8s ease-out;
+.intro h1 {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
 }
 
-p {
+.intro p {
   font-size: 1.1rem;
-  margin-bottom: 20px;
-  animation: slideUp 0.8s ease-out 0.2s;
-  animation-fill-mode: both;
+  opacity: 0.9;
 }
 
 ul.socials {
@@ -54,62 +116,140 @@ ul.socials {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 0;
   margin-top: 20px;
-  animation: fadeIn 1.5s ease-out 0.4s;
-  animation-fill-mode: both;
+  padding: 0;
 }
 
 ul.socials li a {
   text-decoration: none;
   color: var(--accent-color);
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
 ul.socials li a:hover {
-  color: var(--text-color);
+  color: var(--hover-color);
 }
 
-.profile-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-top: 20px;
-  border: 4px solid #ddd;
-  animation: fadeIn 1s ease-out 0.3s;
-  animation-fill-mode: both;
+/* Sections */
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 10px;
+}
+
+/* Projects */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-list li {
+  background: var(--accent-color);
+  color: #111;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: var(--accent-color);
+  color: #111;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Toggle Night Mode */
+#toggle-btn {
+  background: transparent;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: transform 0.2s ease;
+}
+
+#toggle-btn:hover {
+  transform: scale(1.2);
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Toggle Button */
-#toggle-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
-
-#toggle-btn:hover {
-  background-color: darken(var(--accent-color), 10%);
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
